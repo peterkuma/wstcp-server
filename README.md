@@ -67,3 +67,12 @@ Options:
         - `key`: Client authentication key.
         - `port`: TCP forwarding port.
         - `remote`: Remote TCP forwarding (default: `false`).
+
+Copyright
+---------
+
+Copyright 2016 Bovertis BV. All rights reserved.
+
+Authors:
+
+- 2016 Peter Kuma
