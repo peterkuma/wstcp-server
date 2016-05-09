@@ -1,0 +1,28 @@
+{
+  "name": "wstcp-server",
+  "version": "1.0.0-dev",
+  "description": "wstcp server",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "winservice_install": "node winservice.js install",
+    "winservice_uninstall": "node winservice.js uninstall"
+  },
+  "keywords": [
+    "websocket",
+    "tcp",
+    "forwarding",
+    "tunnel",
+    "server"
+  ],
+  "author": "Peter Kuma",
+  "private": true,
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bunyan": "^1.8.1",
+    "bunyan-prettystream": "^0.1.3",
+    "lodash": "^4.12.0",
+    "minimist": "^1.2.0"
+  }
+}
