@@ -3,8 +3,9 @@
   "log": "wstcp-server.log",
   "clients": {
     "client-1": {
-      "port": 22,
-      "key": "1234"
+      "port": 10001,
+      "key": "1234",
+      "remote": true
     },
     "client-2": {
       "port": 10002,

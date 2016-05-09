@@ -10,9 +10,6 @@ const server = require('./server.js');
 
 
 const defaultConfig = {
-  port: 10000,
-  log: 'wstcp-server.log',
-  clients: []
 };
 
 const configFile = argv._[0] ||

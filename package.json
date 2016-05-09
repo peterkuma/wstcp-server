@@ -1,7 +1,7 @@
 {
-  "name": "wstcp-server-win",
+  "name": "wstcp-server",
   "version": "1.0.0-dev",
-  "description": "wstcp server Windows service",
+  "description": "wstcp server",
   "main": "main.js",
   "scripts": {
     "start": "node main.js",
@@ -14,12 +14,11 @@
     "tcp",
     "forwarding",
     "tunnel",
-    "server",
-    "windows",
-    "service"
+    "server"
   ],
   "author": "Peter Kuma",
-  "license": "MIT",
+  "private": true,
+  "license": "UNLICENSED",
   "dependencies": {
     "bunyan": "^1.8.1",
     "bunyan-prettystream": "^0.1.3",
