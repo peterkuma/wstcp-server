@@ -25,6 +25,7 @@ module.exports = function(config) {
       server: httpServer,
       path: '/' + name,
       tcpPort: client.port,
+      tcpHostname: client.hostname,
       remote: !!client.remote,
       verifyClient: verify
     });
