@@ -27,7 +27,8 @@ module.exports = function(config) {
       tcpPort: client.port,
       tcpHostname: client.hostname,
       remote: !!client.remote,
-      verifyClient: verify
+      verifyClient: verify,
+      perMessageDeflate: false
     });
 
     server.on('connection', stream => {
