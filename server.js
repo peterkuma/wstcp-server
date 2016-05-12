@@ -46,7 +46,21 @@ module.exports = function(config) {
       // }
     });
 
-    server.on('error', err => log.error(err, err.message));
+    server.on('end', stream => {
+      let address = _.get(stream, 'socket.upgradeReq.connection.remoteAddress');
+      let port = _.get(stream, 'socket.upgradeReq.connection.remotePort');
+      log.info(`${name} [${address}:${port}]: Connection closed`);
+    });
+
+    server.on('error', err => {
+      if (err.errno = 'EBUSY') {
+        let address = _.get(err.stream, 'socket.upgradeReq.connection.remoteAddress');
+        let port = _.get(err.stream, 'socket.upgradeReq.connection.remotePort');
+        log.info(`${name} [${address}:${port}]: ${err.message}`);
+        return;
+      }
+      log.error(err, err.message)
+    });
   });
 
   httpServer.listen(config.port, config.hostname, () => {
