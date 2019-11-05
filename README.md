@@ -1,16 +1,24 @@
-wstcp Server
+wstcp-server
 ============
 
-WebSocket TCP forwarding server.
+WebSocket TCP forwarding command-line server.
+
+[wstcp](https://github.com/peterkuma/wstcp)
+is a client and server implementation of TCP forwarding over WebSocket.
+wstcp supports local and remote port forwarding, similar to OpenSSH.
+
+Also see [wstcp-client](https://github.com/peterkuma/wstcp-client).
 
 Install
 -------
 
-    npm install
+    npm install wstcp-server
+
+`wstcp-server` program will be installed in the bin directory.
 
 ### Windows
 
-To install as a Windows service:
+Install as a Windows service:
 
     npm install -g node-windows
     npm run winservice_install
@@ -20,7 +28,7 @@ Uninstall
 
 ### Windows
 
-To uninstall the Windows service:
+Uninstall the Windows service:
 
     npm run winservice_uninstall
 
@@ -29,14 +37,12 @@ Usage
 
 Run from console:
 
-    npm start [config]
+    wstcp-server config.json
 
-where `config` is config file (default: `config.json`).
+where `config.json` is a config file (see below).
 
-Configuration
--------------
-
-Example:
+Example
+-------
 
     {
       "port": 10000,
@@ -55,7 +61,13 @@ Example:
       }
     }
 
-Options:
+will start listening on port 10000 for WebSocket connections from clients,
+authenticated as `client-1` or `client-2` with key `1234`.
+Incoming TCP connections on port 10001 will be forwarded to `client-1`,
+and incoming TCP connections on port 10002 will be forwarded to `client-2`.
+
+Configuration
+-------------
 
 - `port`: WebSocket port to listen on.
 - `hostname`: WebSocket hostname to listen on (default: `::`).
@@ -68,11 +80,12 @@ Options:
         - `port`: TCP forwarding port.
         - `remote`: Remote TCP forwarding (default: `false`).
 
-Copyright
----------
+Remote forwarding (`remote: true`) means wstcp-client listens for incoming
+TCP connections and forwards them to wstcp-server. Local forwarding
+(`remote: false`) means incoming TCP connections are forwarded from wstcp-server
+to wstcp-client.
 
-Copyright 2016 Bovertis BV. All rights reserved.
+License
+-------
 
-Authors:
-
-- 2016 Peter Kuma
+[MIT](LICENSE.md)

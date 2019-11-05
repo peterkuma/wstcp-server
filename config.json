@@ -6,11 +6,6 @@
       "port": 10001,
       "key": "1234",
       "remote": true
-    },
-    "client-2": {
-      "port": 10002,
-      "key": "1234",
-      "remote": true
     }
   }
 }
