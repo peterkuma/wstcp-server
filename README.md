@@ -85,6 +85,22 @@ TCP connections and forwards them to wstcp-server. Local forwarding
 (`remote: false`) means incoming TCP connections are forwarded from wstcp-server
 to wstcp-client.
 
+SSL
+---
+
+wstcp-server does not support SSL (wss), but one can use nginx as a HTTPS
+proxy. For example, this nginx configuration will pass `wss://` requests
+to a local wstcp-server instance at `ws://localhost:10000`.
+
+```
+location / {
+	proxy_pass http://localhost:10000;
+	proxy_http_version 1.1;
+	proxy_set_header Upgrade $http_upgrade;
+	proxy_set_header Connection "upgrade";
+}
+```
+
 License
 -------
 
