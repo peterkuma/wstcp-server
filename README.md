@@ -103,6 +103,17 @@ location / {
 }
 ```
 
+Changelog
+---------
+
+### 1.0.1 (2024-03-31)
+
+- Require latest version of wstcp.
+
+### 1.0.0 (2021-07-10)
+
+- Initial release.
+
 License
 -------
 

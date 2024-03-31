@@ -1,6 +1,6 @@
 {
   "name": "wstcp-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "WebSocket TCP forwarding command-line server",
   "main": "main.js",
   "scripts": {
@@ -20,7 +20,7 @@
   "author": "Peter Kuma",
   "license": "MIT",
   "dependencies": {
-    "wstcp": "^1.0.1",
+    "wstcp": "^1.0.7",
     "bunyan": "^1.8.1",
     "bunyan-prettystream": "^0.1.3",
     "lodash": "^4.12.0",
